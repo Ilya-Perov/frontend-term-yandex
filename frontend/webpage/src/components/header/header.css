@@ -1,0 +1,14 @@
+.headerText{
+    font-family: 'Days One', sans-serif;
+    font-size: 50px;
+}
+
+.headerContainer{
+    background-color: darkkhaki;
+    margin: auto;
+    margin-top: 0;
+    width: 93%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
