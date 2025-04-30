@@ -5,6 +5,7 @@
     # Копируем package-файлы и устанавливаем зависимости
     COPY package.json package-lock.json ./
     RUN npm install
+    RUN npm install webpack --save-dev
     
     # Копируем оставшиеся файлы проекта
     COPY . .
