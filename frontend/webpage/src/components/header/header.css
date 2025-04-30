@@ -1,27 +1,53 @@
-.headerText{
-    font-family: 'Days One', sans-serif;
-    color: white;
-    font-size: 3.5vw;
+.headerText {
+    color: black;
+    font-size: clamp(2.6rem, 3.5vw, 3rem);
     text-align: left;
     margin-top: auto;
     margin-bottom: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.headerContainer{
-    background-color: #190061;
+.headerContainer {
+    background-color: #AFD275;
     margin: auto;
     margin-top: 0;
     width: 96%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-radius: 10vw;
-    padding-left: 1%;
-    padding-right: 1%;
-    align-content: center;
+    align-items: center;
+    border-radius: 5vw;
+    min-height: 80px;
 }
 
-.headerImage{
-    width: 5%;
-    margin-right: 5%;
+.headerImage {
+    width: clamp(40px, 6vw, 80px);
+    height: auto; /* сохраняет пропорции */
+    margin-right: 3%;
+    object-fit: contain; /* предотвращает искажение */
 }
+
+
+.headerButtonContainer {
+    display: flex;
+    flex-direction: row;
+    min-width: 40%;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+@media (max-width: 500px) {
+    .headerText {
+        font-size: 5.5vw; /* больше шрифт на узких экранах */
+    }
+
+    .headerButtonContainer {
+        min-width: 45%;
+    }
+
+    .headerImage {
+        width: 12vw;
+    }
+}
+

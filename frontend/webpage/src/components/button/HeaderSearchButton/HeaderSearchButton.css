@@ -1,0 +1,17 @@
+.searchButton {
+    background-color: white;
+    border-radius: 1rem;
+    width: 10vw;
+    font-size: clamp(1rem, 1.2vw, 1.4rem);
+    text-align: center;
+    border: 0.15vw solid #E7717D;
+    min-width: fit-content;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    cursor: pointer;
+}
+
+.searchButton:active {
+    transform: scale(0.95);
+}

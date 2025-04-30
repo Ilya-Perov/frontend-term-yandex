@@ -1,1 +1,1 @@
-export {WebpageTitle} from './header'
+export {Header} from './header'
