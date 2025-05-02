@@ -1,7 +1,6 @@
 import './recipePreview.css';
 import TagsContainer from '../tagsContainer/tagsContainer';
 import React from 'react';
-import logo from "../../images/logo.png"
 
 type RecipePreviewProps = {
     image?: File,
@@ -18,7 +17,7 @@ export const RecipePreview = (props: RecipePreviewProps) =>{
             <div style={{display: 'flex', flexDirection: 'row'}}>
                 <img
                     className='recipePreviewImage'
-                    src={logo}/>
+                    src={image}/>
                 <div className='recipePreviewTextContainer'>
                     <div className='recipePreviewName'>{name}</div>
                     <div className='recipePreviewDescription'>{description}</div>
