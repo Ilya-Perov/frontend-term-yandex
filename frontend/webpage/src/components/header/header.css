@@ -19,6 +19,8 @@
     align-items: center;
     border-radius: 5vw;
     min-height: 80px;
+    padding-left: 1vw;
+    padding-right: 1vw;
 }
 
 .headerImage {

@@ -1,0 +1,31 @@
+.recipePreviewContainer{
+    border: 0.2vw solid black;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.recipePreviewImage{
+    width: 7vw;
+    min-width: 100px;
+    height: auto;
+}
+
+.recipePreviewTextContainer{
+    width: fit-content;
+
+}
+
+.recipePreviewName{
+    margin-bottom: 1rem;
+    font-size: clamp(1.5rem, 2.5vw, 4rem);
+}
+
+.recipePreviewDescription{
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+}
+
+.recipePreviewTags{
+    display: flex;
+    flex-direction: row;
+}

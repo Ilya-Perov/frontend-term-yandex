@@ -1,7 +1,6 @@
 import "./HeaderCatalogueButton.css"
 import React from 'react';
 
-type headerCatalogueButtonProps = {}
 
 export const HeaderCatalogueButton = () =>{
     return (
