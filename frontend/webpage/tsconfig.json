@@ -1,12 +1,13 @@
 {
 	"compilerOptions": {
-	  "target": "es5",
-	  "lib": ["dom", "es2015"],
-	  "jsx": "react",
+	  "target": "es5", // Можно заменить на es6, если нужно
+	  "module": "esnext",
+	  "jsx": "react-jsx",
+	  "esModuleInterop": true,
+	  "skipLibCheck": true,
+	  "strict": true,
+	  "forceConsistentCasingInFileNames": true,
 	  "moduleResolution": "node"
-	},
-	"include": [
-	  "src"
-	]
+	}
   }
   

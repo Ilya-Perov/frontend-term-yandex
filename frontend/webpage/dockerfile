@@ -6,6 +6,7 @@
     COPY package.json package-lock.json ./
     RUN npm install
     RUN npm install webpack --save-dev
+    RUN npm install react-router
     
     # Копируем оставшиеся файлы проекта
     COPY . .

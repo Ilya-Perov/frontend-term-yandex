@@ -1,14 +1,19 @@
 import "./HeaderCatalogueButton.css"
-import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
+export const HeaderCatalogueButton = () => {
+    const navigate = useNavigate();
 
-export const HeaderCatalogueButton = () =>{
+    const goToCatalogue = () => {
+        navigate('/catalogue');
+    };
+
     return (
         <button 
-        type='button'
-        className='catalogueButton'>
-                Каталог<br/>рецептов
+            type='button'
+            className='catalogueButton'
+            onClick={goToCatalogue}>
+            Каталог<br />рецептов
         </button>
     );
 };
-
