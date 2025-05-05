@@ -1,8 +1,7 @@
-// App.tsx
-import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Catalogue from '../catalogue/Catalogue'; // путь к твоему компоненту
-import {Home} from '../home/home'; // путь к главной странице
+import { RecipeConstructor } from '../recipeConstructor/recipeConstructor';
+import Catalogue from '../catalogue/Catalogue';
+import {Home} from '../home/home';
 
 const App = () => {
   return (
@@ -10,6 +9,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/catalogue" element={<Catalogue />} />
+        <Route path="/recipeConstructor" element={<RecipeConstructor/>} />
       </Routes>
     </Router>
   );

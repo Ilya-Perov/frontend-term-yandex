@@ -1,0 +1,27 @@
+.recipeConstructor{
+    font-family: 'Days One', sans-serif;
+    background-color: #c2cad0;
+    min-height: 100vh;
+}
+
+.recipeConstructorTitle{
+    font-size: 4rem;
+    margin-bottom: 3vh;
+}
+
+.recipeConstructorHelp{
+    font-size: 2rem;
+    margin-bottom: 5vh;
+}
+
+.recipeConstructorBody{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 3vw 0 3vw;
+    align-items: normal;
+}
+
+.recipeConstructorFullRecipe{
+    
+}

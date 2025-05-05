@@ -3,6 +3,7 @@
     width: fit-content;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .recipePreviewImage{
@@ -13,7 +14,6 @@
 
 .recipePreviewTextContainer{
     width: fit-content;
-
 }
 
 .recipePreviewName{

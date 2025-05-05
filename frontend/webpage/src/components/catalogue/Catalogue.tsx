@@ -1,8 +1,10 @@
-import React from 'react';
+import './catalogue.css'
+import {Header} from '../header/index'
 
 const Catalogue = () => {
   return (
-    <div>
+    <div className='main'>
+      <Header/>
       <h1>Catalogue Page</h1>
     </div>
   );

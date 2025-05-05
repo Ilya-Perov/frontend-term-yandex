@@ -1,0 +1,11 @@
+.recipeInput{
+    display: flex;
+}
+
+.recipeInputText{
+    
+}
+
+.recipeInputField{
+    margin-bottom: 2vh;
+}

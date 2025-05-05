@@ -7,6 +7,7 @@ CREATE TABLE recipes (
     cooking_time INT,
     servings INT,
     image_url TEXT,
+    tags: TEXT[],
     created_at TIMESTAMP DEFAULT NOW(),
     updated_at TIMESTAMP DEFAULT NOW()
 );
@@ -21,7 +22,8 @@ INSERT INTO recipes (
     'Смешайте все ингредиенты, выпекайте на сковороде по 2–3 минуты с каждой стороны.',
     20,
     4,
-    'https://example.com/images/pancakes.jpg'
+    'https://example.com/images/pancakes.jpg',
+    ARRAY['tasty', 'good', 'sweet']
 ),
 (
     'Паста с томатным соусом',
@@ -30,7 +32,8 @@ INSERT INTO recipes (
     'Отварите пасту. Обжарьте чеснок, добавьте помидоры, тушите 10 минут. Смешайте с пастой.',
     25,
     2,
-    'https://example.com/images/pasta.jpg'
+    'https://example.com/images/pasta.jpg',
+    ARRAY['tasty', 'good', 'umami']
 ),
 (
     'Салат Цезарь',
@@ -39,5 +42,6 @@ INSERT INTO recipes (
     'Обжарьте курицу, нарежьте салат, добавьте остальные ингредиенты и соус. Перемешайте.',
     15,
     2,
-    'https://example.com/images/caesar.jpg'
+    'https://example.com/images/caesar.jpg',
+    ARRAY['tasty', 'good', 'umami']
 );

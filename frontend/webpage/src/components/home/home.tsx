@@ -6,7 +6,7 @@ import {Body} from '../body/index';
 
 export const Home = () =>{
     return(
-        <div className='main'>
+        <div className='home'>
             <Header/>
             <Body/>
         </div>
