@@ -1,17 +1,18 @@
 import { useNavigate } from 'react-router-dom';
-import './body.css'
+import './GoToConstructorButton.css';
 
-export const Body = () => {
+export const GoToConstructorButton = () => {
   const navigate = useNavigate();
 
   const goToConstructor = () => {
       navigate('/recipeConstructor');
   };
+
   return (
-    <div className='body'>
+    <div className="buttonContainer">
       <button 
-          type='button'
-          className='catalogueButton'
+          type="button"
+          className="constructorButton"
           onClick={goToConstructor}>
           Конструктор<br />рецептов
       </button>

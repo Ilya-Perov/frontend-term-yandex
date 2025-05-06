@@ -1,27 +1,67 @@
-.recipeConstructor{
+.recipeConstructor {
     font-family: 'Days One', sans-serif;
-    background-color: #c2cad0;
+    background-color: #C2CAD0;
     min-height: 100vh;
+    padding: 2rem 5vw;
+    box-sizing: border-box;
 }
 
-.recipeConstructorTitle{
-    font-size: 4rem;
-    margin-bottom: 3vh;
+.recipeConstructorTitle {
+    font-size: clamp(2.2rem, 3vw, 4rem);
+    margin: 3vh 0 2vh 0;
+    text-align: center;
+    color: #7E685A;
 }
 
-.recipeConstructorHelp{
-    font-size: 2rem;
+.recipeConstructorHelp {
+    font-size: 1.8rem;
     margin-bottom: 5vh;
+    color: #7E685A;
+    text-align: center;
 }
 
-.recipeConstructorBody{
+.recipeConstructorBody {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 0 3vw 0 3vw;
-    align-items: normal;
+    gap: 3vw;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
 }
 
-.recipeConstructorFullRecipe{
-    
+.recipeConstructorDivider {
+    margin: 2rem 0;
+    border-top: 1px solid #7E685A;
+}
+
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .recipeConstructorBody {
+        flex-direction: column; 
+        margin: 0 5vw; 
+    }
+
+    .recipeConstructorTitle {
+        font-size: clamp(2rem, 3vw, 4rem);
+    }
+
+    .recipeConstructorHelp {
+        font-size: 1.5rem; 
+    }
+}
+
+@media (max-width: 500px) {
+    .recipeConstructorTitle {
+        font-size: clamp(2rem, 4vw, 3.5rem); 
+    }
+
+    .recipeConstructorHelp {
+        font-size: 1.2rem;
+    }
+
+    .recipeConstructorBody {
+        margin: 0 2vw; 
+    }
 }

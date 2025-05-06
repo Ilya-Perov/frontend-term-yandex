@@ -1,5 +1,60 @@
-.home{
+.home {
     font-family: 'Days One', sans-serif;
-    background-color: #c2cad0;
+    background-color: #C2CAD0; 
     min-height: 100vh;
+    padding: 2rem 0;
+}
+
+.homeContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 3vw;
+    margin-top: 3vh;
+}
+
+.homeTitle {
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    color: #7E685A; 
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.homeDescription {
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
+    color: #7E685A; 
+    margin-bottom: 3rem;
+    width: 80%;
+}
+
+.homeInstructions {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: #7E685A;
+    width: 80%;
+    margin-bottom: 1rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .homeTitle {
+        font-size: clamp(2rem, 4vw, 4rem); 
+    }
+
+    .homeDescription,
+    .homeInstructions {
+        font-size: clamp(1rem, 3vw, 1.3rem); 
+    }
+}
+
+@media (max-width: 500px) {
+    .homeTitle {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+    }
+
+    .homeDescription,
+    .homeInstructions {
+        font-size: 1.2rem; 
+    }
 }

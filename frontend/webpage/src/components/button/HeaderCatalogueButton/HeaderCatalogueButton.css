@@ -1,5 +1,6 @@
 .catalogueButton {
-    background-color: white;
+    background-color: #E7717D; 
+    color: white;
     border-radius: 1rem;
     margin-right: 10%;
     width: 10vw;
@@ -9,10 +10,18 @@
     border: 0.15vw solid #E7717D;
     padding-left: 2vw;
     padding-right: 2vw;
-    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.3s ease;
     cursor: pointer;
+}
+
+.catalogueButton:hover {
+    background-color: #AFD275; 
+    border-color: #AFD275; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
 }
 
 .catalogueButton:active {
     transform: scale(0.95);
+    background-color: #7E685A; 
+    border-color: #7E685A;
 }

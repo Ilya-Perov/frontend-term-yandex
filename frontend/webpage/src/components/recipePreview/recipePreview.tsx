@@ -17,7 +17,7 @@ export const RecipePreview = (props: RecipePreviewProps) => {
                 <img
                     className='recipePreviewImage'
                     src={imageSrc ?? ''}  // Если imageSrc не определено, передаем пустую строку
-                    alt="Recipe"
+                    alt="Изображение для рецепта"
                 />
                 <div className='recipePreviewTextContainer'>
                     <div className='recipePreviewName'>{title}</div>

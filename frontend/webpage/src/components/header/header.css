@@ -1,15 +1,14 @@
 .headerText {
-    color: black;
+    color: #7E685A; 
     font-size: clamp(2.6rem, 3.5vw, 3rem);
     text-align: left;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin: auto 0;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 .headerContainer {
-    background-color: #AFD275;
+    background-color: #AFD275; 
     margin: auto;
     margin-top: 0;
     width: 96%;
@@ -21,15 +20,15 @@
     min-height: 80px;
     padding-left: 1vw;
     padding-right: 1vw;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
 }
 
 .headerImage {
     width: clamp(40px, 6vw, 80px);
-    height: auto; /* сохраняет пропорции */
+    height: auto;
     margin-right: 3%;
-    object-fit: contain; /* предотвращает искажение */
+    object-fit: contain;
 }
-
 
 .headerButtonContainer {
     display: flex;
@@ -39,17 +38,33 @@
     gap: 0.5rem;
 }
 
+/* Адаптивность */
 @media (max-width: 500px) {
     .headerText {
-        font-size: 5.5vw; /* больше шрифт на узких экранах */
+        font-size: 5.5vw;
     }
 
     .headerButtonContainer {
-        min-width: 45%;
+        min-width: 45%; 
     }
 
     .headerImage {
-        width: 12vw;
+        width: 12vw; 
     }
 }
 
+@media (max-width: 768px) {
+    .headerContainer {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .headerButtonContainer {
+        min-width: 60%;
+        justify-content: center; 
+    }
+
+    .headerText {
+        text-align: center; 
+    }
+}

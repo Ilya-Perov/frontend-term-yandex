@@ -1,0 +1,36 @@
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3vh;
+  }
+  
+  .constructorButton {
+    background-color: #E7717D; 
+    color: white; 
+    font-size: clamp(1.2rem, 2vw, 2rem);
+    padding: 1.2rem 2.5rem;
+    border: none;
+    border-radius: 3vw;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    display: inline-block;
+    line-height: 1.2;
+    font-weight: bold;
+  }
+  
+  .constructorButton:hover {
+    background-color: #AFD275; 
+    transform: scale(1.05); 
+  }
+  
+  .constructorButton:active {
+    background-color: #7E685A; 
+    transform: scale(0.98); 
+  }
+  
+  .constructorButton:focus {
+    outline: none; 
+  }
+  

@@ -1,17 +1,26 @@
 .searchButton {
-    background-color: white;
+    background-color: #E7717D; 
+    color: white; 
     border-radius: 1rem;
     width: 10vw;
     font-size: clamp(1rem, 1.2vw, 1.4rem);
     text-align: center;
-    border: 0.15vw solid #E7717D;
+    border: 0.15vw solid #E7717D; 
     min-width: fit-content;
     padding-left: 2vw;
     padding-right: 2vw;
-    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.3s ease;
     cursor: pointer;
+}
+
+.searchButton:hover {
+    background-color: #AFD275;
+    border-color: #AFD275; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
 }
 
 .searchButton:active {
     transform: scale(0.95);
+    background-color: #7E685A;
+    border-color: #7E685A; 
 }
