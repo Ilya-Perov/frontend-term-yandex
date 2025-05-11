@@ -35,12 +35,52 @@
     border-top: 1px solid #7E685A;
 }
 
+.recipePreviewWrapper{
+    width: 50%;
+}
 
-/* Адаптивность */
+.formButtonContainer {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.formButton {
+    padding: 0.8rem 2rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 0.4rem;
+    text-align: center;
+}
+
+.formButton.save {
+    background-color: #7E685A;
+    color: white;
+}
+
+.formButton.save:hover {
+    background-color: #6C5A47;
+    transform: scale(1.05);
+}
+
+.formButton.reset {
+    background-color: #D1C2B0;
+    color: #7E685A;
+}
+
+.formButton.reset:hover {
+    background-color: #B9A08A;
+    transform: scale(1.05);
+}
+
 @media (max-width: 768px) {
     .recipeConstructorBody {
-        flex-direction: column; 
-        margin: 0 5vw; 
+        flex-direction: column;
+        margin: 0 5vw;
     }
 
     .recipeConstructorTitle {
@@ -48,13 +88,29 @@
     }
 
     .recipeConstructorHelp {
-        font-size: 1.5rem; 
+        font-size: 1.5rem;
+    }
+
+    .formButtonContainer {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .formButton {
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    .recipePreviewWrapper {
+        max-width: 100%;
+        width: 100%;
+        margin-top: 2rem;
     }
 }
 
 @media (max-width: 500px) {
     .recipeConstructorTitle {
-        font-size: clamp(2rem, 4vw, 3.5rem); 
+        font-size: clamp(2rem, 4vw, 3.5rem);
     }
 
     .recipeConstructorHelp {
@@ -62,6 +118,10 @@
     }
 
     .recipeConstructorBody {
-        margin: 0 2vw; 
+        margin: 0 2vw;
+    }
+
+    .formButton {
+        font-size: 1.4rem;
     }
 }

@@ -6,7 +6,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    clean: true
+    publicPath: '/', // Important for react-router
+    clean: true,     // Clean 'dist' before each build
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js']
@@ -23,7 +24,7 @@ module.exports = {
         use: ['style-loader', 'css-loader']
       },
       {
-        test: /\.(png|jpg|gif|svg|ttf|woff|woff2|eot)$/,
+        test: /\.(png|jpe?g|gif|svg|ttf|woff2?|eot)$/,
         type: 'asset/resource'
       }
     ]
@@ -34,9 +35,12 @@ module.exports = {
     })
   ],
   devServer: {
-    static: path.resolve(__dirname, 'dist'),
-    historyApiFallback: true,
+    static: {
+      directory: path.resolve(__dirname, 'dist'),
+    },
+    historyApiFallback: true, // Required for React Router
     open: true,
     port: 3000
-  }
+  },
+  mode: 'development' // Overridden by npm run build
 };

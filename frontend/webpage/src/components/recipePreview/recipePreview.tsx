@@ -5,8 +5,6 @@ import {RecipePreviewProps} from '../../types'
 export const RecipePreview = (props: RecipePreviewProps) => {
     const { title, description, image, tags  } = props;
     
-    // Если image - это объект типа File, то создаем URL для него
-    const imageSrc = image instanceof File ? URL.createObjectURL(image) : image;
 
     const tagsDivs = tags.map(tag => <TagsContainer name={tag} key={tag} />);
 
@@ -16,7 +14,7 @@ export const RecipePreview = (props: RecipePreviewProps) => {
             <div style={{ display: 'flex', flexDirection: 'row' }}>
                 <img
                     className='recipePreviewImage'
-                    src={imageSrc ?? ''}  // Если imageSrc не определено, передаем пустую строку
+                    src={image ?? ''}  
                     alt="Изображение для рецепта"
                 />
                 <div className='recipePreviewTextContainer'>

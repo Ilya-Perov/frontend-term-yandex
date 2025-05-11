@@ -11,6 +11,8 @@ interface RecipeInputProps {
     setTags: (value: string[]) => void;
     ingredients: string[];
     setIngredients: (value: string[]) => void;
+    ingredientsInput: string;
+    setIngredientsInput: (value: string) => void;
     cookingTime: number;
     setCookingTime: (value: number) => void;
     serving: number;
@@ -25,6 +27,7 @@ export const RecipeInput = ({
     image, setImage,
     tags, setTags,
     ingredients, setIngredients,
+    ingredientsInput, setIngredientsInput,
     cookingTime, setCookingTime,
     serving, setServing,
     instructions, setInstructions
@@ -59,14 +62,22 @@ export const RecipeInput = ({
                 <input
                     className='recipeInputField'
                     value={tags.join(', ')}
-                    onChange={(e) => setTags(e.target.value.split(',').map(tag => tag.trim()))}
+                    onChange={(e) => setTags(e.target.value.split(', ').map(tag => tag.trim()))}
                 />
 
                 <div className='recipeInputText'>Введите ингредиенты (через запятую)</div>
                 <input
                     className='recipeInputField'
-                    value={ingredients.join(', ')}
-                    onChange={(e) => setIngredients(e.target.value.split(',').map(i => i.trim()))}
+                    value={ingredientsInput}
+                    onChange={(e) => setIngredientsInput(e.target.value)}
+                    onBlur={() => {
+                        setIngredients(
+                            ingredientsInput
+                                .split(',')
+                                .map(i => i.trim())
+                                .filter(i => i.length > 0)
+                        );
+                    }}
                 />
 
                 <div className='recipeInputText'>Введите время приготовления (в минутах)</div>

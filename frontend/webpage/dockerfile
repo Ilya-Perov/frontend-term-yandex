@@ -1,27 +1,20 @@
-# --- Этап сборки ---
-    FROM node:18 AS build
-    WORKDIR /app
-    
-    # Копируем package-файлы и устанавливаем зависимости
-    COPY package.json package-lock.json ./
-    RUN npm install
-    RUN npm install webpack --save-dev
-    RUN npm install react-router
-    
-    # Копируем оставшиеся файлы проекта
-    COPY . .
-    
-    # Строим production-сборку
-    RUN npm run build
-    
-    # --- Этап продакшн-сервера ---
-    FROM nginx:alpine
-    
-    # Копируем собранную статику из предыдущего этапа
-    COPY --from=build /app/build /usr/share/nginx/html
-    
-    
-    EXPOSE 80
-    
-    CMD ["nginx", "-g", "daemon off;"]
-    
+FROM node:16
+
+# Set working directory
+WORKDIR /app
+
+# Copy and install dependencies
+COPY package*.json ./
+RUN npm install
+
+# Copy source code
+COPY . .
+
+# Build the React app
+RUN npm run build
+
+# Expose the port
+EXPOSE 3000
+
+# Serve the app using npx (avoids global install)
+CMD ["npx", "serve", "-s", "dist", "-l", "3000"]

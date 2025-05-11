@@ -1,11 +1,12 @@
-import './catalogue.css'
-import {Header} from '../header/index'
+import './catalogue.css';
+import { Header } from '../header';
+import CatalogueBody from '../catalogueBody/catalogueBody'; 
 
 const Catalogue = () => {
   return (
     <div className='main'>
-      <Header/>
-      <h1>Catalogue Page</h1>
+      <Header />
+      <CatalogueBody /> 
     </div>
   );
 };

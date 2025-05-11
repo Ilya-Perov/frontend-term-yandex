@@ -7,7 +7,7 @@ interface RecipeDisplayProps {
     tags: string[];
     ingredients: string[];
     cookingTime: number;
-    serving: number;
+    servings: number;
     instructions: string;
 }
 
@@ -18,7 +18,7 @@ export const RecipeDisplay = ({
     tags,
     ingredients,
     cookingTime,
-    serving,
+    servings,
     instructions
 }: RecipeDisplayProps) => {
     return (
@@ -48,7 +48,7 @@ export const RecipeDisplay = ({
             <h2 className="recipeDisplaySectionTitle">Время и порции</h2>
             <div className="recipeDisplayInstructions">
                 ⏱ Время: {cookingTime > 0 ? `${cookingTime} мин` : 'Не указано'} <br />
-                🍽 Порций: {serving > 0 ? serving : 'Не указано'}
+                🍽 Порций: {servings > 0 ? servings : 'Не указано'}
             </div>
         </div>
     );
