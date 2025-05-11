@@ -4,6 +4,7 @@ import { RecipePreview } from "../recipePreview/recipePreview";
 import { Header } from "../header";
 import { RecipeDisplay } from "../recipeDisplay/recipeDisplay";
 import { createRecipe } from "../api/api"; 
+import { SuccessModal } from "../successModal/successModal";
 import './recipeConstructor.css';
 
 export const RecipeConstructor = () => {
@@ -16,6 +17,7 @@ export const RecipeConstructor = () => {
   const [cookingTime, setCookingtime] = useState(0);
   const [serving, setServing] = useState(0);
   const [instructions, setInstructions] = useState('');
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
 
   useEffect(() => {
     setIngredientsInput(ingredients.join(', '));
@@ -35,7 +37,7 @@ export const RecipeConstructor = () => {
 
     try {
       await createRecipe(payload);
-      alert('Рецепт успешно сохранен');
+      setShowSuccessModal(true);
       handleReset();
     } catch (err) {
       console.error('Ошибка при сохранении рецепта:', err);
@@ -111,6 +113,13 @@ export const RecipeConstructor = () => {
         <button className="formButton save" onClick={handleSubmit}>Сохранить</button>
         <button className="formButton reset" onClick={handleReset}>Сбросить</button>
       </div>
+
+      {showSuccessModal && (
+        <SuccessModal 
+          message="Рецепт успешно сохранён!" 
+          onClose={() => setShowSuccessModal(false)} 
+        />
+      )}
     </div>
   );
 };
