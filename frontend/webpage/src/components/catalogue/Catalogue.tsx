@@ -1,14 +1,18 @@
-import './catalogue.css';
+import './Catalogue.css';
 import { Header } from '../header';
+import Footer from '../footer/footer';
 import CatalogueBody from '../catalogueBody/catalogueBody'; 
 
-const Catalogue = () => {
+export const Catalogue = () => {
   return (
-    <div className='main'>
+    <div className='content'>
       <Header />
-      <CatalogueBody /> 
+      <div className='main'>
+        <CatalogueBody /> 
+      </div>
+      <Footer/>
     </div>
+
   );
 };
 
-export default Catalogue;

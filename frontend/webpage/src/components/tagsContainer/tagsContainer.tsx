@@ -1,4 +1,3 @@
-import React from 'react';
 import './tagsContainer.css';
 
 type tagsContainerProps = {

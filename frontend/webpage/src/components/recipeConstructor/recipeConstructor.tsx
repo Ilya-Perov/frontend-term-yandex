@@ -6,6 +6,7 @@ import { RecipeDisplay } from "../recipeDisplay/recipeDisplay";
 import { createRecipe } from "../api/api"; 
 import { SuccessModal } from "../successModal/successModal";
 import './recipeConstructor.css';
+import Footer from "../footer/footer";
 
 export const RecipeConstructor = () => {
   const [title, setTitle] = useState('');
@@ -58,6 +59,7 @@ export const RecipeConstructor = () => {
   };
 
   return (
+    <div className="content">
     <div className="recipeConstructor">
       <Header />
       <div className="recipeConstructorTitle">Конструктор рецептов</div>
@@ -120,6 +122,8 @@ export const RecipeConstructor = () => {
           onClose={() => setShowSuccessModal(false)} 
         />
       )}
+    </div>
+    <Footer/>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 CREATE TABLE recipes (
+    id SERIAL PRIMARY KEY,
     title TEXT,
     description TEXT,
     ingredients TEXT[],
