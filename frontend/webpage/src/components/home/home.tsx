@@ -107,7 +107,7 @@ export const Home = () => {
     <div className='home'>
       <Header />
       <div className='homeContent'>
-        <h1 className='homeTitle'>Добро пожаловать на сайт "Все рецепты здесь"!</h1>
+        <h1 className='homeTitle'>Добро пожаловать на сайт "Все рецепты здесь!"</h1>
         <p className='homeDescription'>
           Здесь вы можете создавать, редактировать и делиться своими любимыми рецептами.
           Пошаговые инструкции, точные ингредиенты, время приготовления и советы — всё,
