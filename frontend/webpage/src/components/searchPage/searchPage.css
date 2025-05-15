@@ -4,7 +4,6 @@
     min-height: 100vh;
     display: flex;      
     flex-direction: column;  
-    padding-top: 2rem;
   }
   
   .searchPage {
@@ -24,12 +23,12 @@
 .searchTitle {
     font-size: clamp(2.2rem, 3vw, 4rem);
     margin-bottom: 1vh;
-    color: #7E685A;
+    color: #000000;
 }
 
 .searchDescription {
     font-size: clamp(1.2rem, 2.5vw, 2rem);
-    color: #7E685A;
+    color: #000000;
     margin-bottom: 2rem;
     width: 80%;
 }
@@ -50,24 +49,24 @@
 .searchInput {
     padding: 0.8rem;
     border-radius: 8px;
-    border: 1px solid #7E685A;
+    border: 1px solid #000000;
     font-size: 1rem;
 }
 
 .tagDropdown {
     padding: 0.5rem 1rem;
     font-size: 1rem;
-    border: 1px solid #7E685A;
+    border: 1px solid #000000;
     border-radius: 4px;
     margin-bottom: 1rem;
-    background-color: white;
-    color: #7E685A;
+    background-color: #ffffff;
+    color: #000000;
     cursor: pointer;
 }
 
 .tagDropdown:focus {
     outline: none;
-    border-color: #4E3B31;
+    border-color: #bebebe;
 }
 
 .tagItem.selected {
@@ -76,18 +75,19 @@
 }
 
 .recipesGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  justify-items: center;
+  align-items: stretch; 
 }
 
 .recipesGrid .catalogueItem {
-    width: 320px; 
-    height: 400px;  
-    display: flex;
-    box-sizing: border-box;
-    height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .modal {
@@ -117,7 +117,7 @@
     top: 1rem;
     right: 1rem;
     padding: 0.5rem 1rem;
-    background-color: #7E685A;
+    background-color: #6f6f6f; 
     color: white;
     border: none;
     border-radius: 4px;
@@ -126,7 +126,12 @@
 }
   
 .closeButton:hover {
-    background-color: #4E3B31;
+    background-color: #8a8a8a; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+}
+
+.closeButton:active {
+    transform: scale(0.95);
 }
 
 @media (max-width: 768px) {

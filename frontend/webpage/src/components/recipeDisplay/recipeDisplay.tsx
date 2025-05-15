@@ -30,16 +30,24 @@ export const RecipeDisplay = ({
             )}
 
             <div className="recipeDisplayTags">
-                {tags.length > 0 ? tags.map(tag => (
-                    <span key={tag} className="recipeDisplayTag">{tag}</span>
-                )) : <span className="recipeDisplayTag">Без тегов</span>}
+                {tags.length > 0 ? (
+                    tags.map(tag => (
+                        <span key={tag} className="recipeDisplayTag">{tag}</span>
+                    ))
+                ) : (
+                    <span className="recipeDisplayTag">Без тегов</span>
+                )}
             </div>
 
             <h2 className="recipeDisplaySectionTitle">Ингредиенты</h2>
             <ul className="recipeDisplayList">
-                {ingredients.length > 0 ? ingredients.map((item, index) => (
-                    <li key={index}>{item}</li>
-                )) : <li>Нет ингредиентов</li>}
+                {ingredients.length > 0 ? (
+                    ingredients.map((item, index) => (
+                        <li key={index}>{item}</li>
+                    ))
+                ) : (
+                    <li>Нет ингредиентов</li>
+                )}
             </ul>
 
             <h2 className="recipeDisplaySectionTitle">Инструкция</h2>

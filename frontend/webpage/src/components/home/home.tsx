@@ -4,19 +4,18 @@ import './home.css';
 import { Header } from '../header/index';
 import { GoToConstructorButton } from '../button/GoToConstructorButton/GoToConstructorButton';
 import Slider from 'react-slick';
-import { useEffect, useState } from 'react';
-import { fetchRecipes } from '../api/api';
-import { RecipePreview } from '../recipePreview/recipePreview'; // путь может отличаться
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import '../../types'
+import { useEffect, useState } from 'react';
+import { fetchRecipes } from '../api/api';
+import { RecipePreview } from '../recipePreview/recipePreview'; 
 import { Recipe } from '../../types';
 import Footer from '../footer/footer'
-import { RecipeDisplay } from '../recipeDisplay/recipeDisplay'; // Импортируем компонент для отображения рецепта в модальном окне
+import { RecipeDisplay } from '../recipeDisplay/recipeDisplay'; 
 
 export const Home = () => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
-  const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null); // Состояние для выбранного рецепта
+  const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null); 
 
   useEffect(() => {
     const loadRecipes = async () => {
@@ -51,7 +50,7 @@ export const Home = () => {
       {
         breakpoint: 960,
         settings: {
-          slidesToShow: 1.5, // чуть больше одной карточки видно
+          slidesToShow: 1.5, 
           slidesToScroll: 1,
         },
       },
@@ -74,12 +73,10 @@ export const Home = () => {
     ],
   };
 
-  // Обработчик для открытия модального окна
   const handleRecipeClick = (recipe: Recipe) => {
     setSelectedRecipe(recipe);
   };
 
-  // Обработчик для закрытия модального окна
   const handleCloseRecipe = () => {
     setSelectedRecipe(null);
   };

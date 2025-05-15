@@ -1,4 +1,4 @@
-.searchButton {
+.constructorButtonHeader {
     background-color: #6f6f6f; 
     color: white;
     border-radius: 1rem;
@@ -14,11 +14,11 @@
     border: none;
 }
 
-.searchButton:hover {
+.constructorButtonHeader:hover {
     background-color: #8a8a8a; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
 }
 
-.searchButton:active {
+.constructorButtonHeader:active {
     transform: scale(0.95);
 }

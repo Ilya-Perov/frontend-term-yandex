@@ -5,7 +5,7 @@
     max-width: 900px;
     margin: 2rem auto;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-    color: #7E685A;
+    color: #000000;
     box-sizing: border-box;
 }
 
@@ -16,11 +16,12 @@
     margin-bottom: 1.5rem;
     object-fit: cover;
     max-height: 400px;
+    border: 0.2vw solid #000000;
 }
 
 .recipeDisplayTitle {
     font-size: clamp(2rem, 4vw, 3rem);
-    color: #E7717D;
+    color: #000000;
     margin-bottom: 1rem;
     font-weight: bold;
 }
@@ -28,7 +29,7 @@
 .recipeDisplayDescription {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
-    color: #7E685A;
+    color: #000000;
 }
 
 .recipeDisplayTags {
@@ -39,27 +40,29 @@
 }
 
 .recipeDisplayTag {
-    background-color: #AFD275;
-    color: #7E685A;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #E7717D;
     padding: 0.5rem 0.9rem;
+    margin-top: 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
 }
 
 .recipeDisplaySectionTitle {
     font-size: 1.4rem;
-    color: #E7717D;
+    color: #000000;
     margin: 1.2rem 0 0.5rem;
     font-weight: 600;
 }
 
 .recipeDisplayList,
 .recipeDisplayInstructions {
-    background-color: #C2B9B0;
+    background-color: #e4e4e4;
     padding: 1rem;
     border-radius: 10px;
     font-size: 1rem;
-    color: #7E685A;
+    color: #000000;
     line-height: 1.5;
 }
 

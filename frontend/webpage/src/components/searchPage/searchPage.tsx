@@ -14,8 +14,8 @@ const SearchPage = () => {
   const [filteredRecipes, setFilteredRecipes] = useState<Recipe[]>([]);
   const [allTags, setAllTags] = useState<string[]>([]);
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
-  const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null); // Для модального окна
-  const [searchQuery, setSearchQuery] = useState<string>(''); // Для строки поиска
+  const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null); 
+  const [searchQuery, setSearchQuery] = useState<string>(''); 
 
   useEffect(() => {
     const loadRecipes = async () => {
@@ -23,7 +23,6 @@ const SearchPage = () => {
         const data = await fetchRecipes();
         setRecipes(data);
 
-        // Извлекаем уникальные теги
         const tags = extractAllTags(data).sort();
         setAllTags(tags);
       } catch (error) {
@@ -35,7 +34,6 @@ const SearchPage = () => {
   }, []);
 
   useEffect(() => {
-    // Фильтруем рецепты по тегам и строке поиска
     let filtered = recipes;
 
     if (selectedTag) {

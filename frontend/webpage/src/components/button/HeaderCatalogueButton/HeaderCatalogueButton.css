@@ -1,5 +1,5 @@
 .catalogueButton {
-    background-color: #E7717D; 
+    background-color: #6f6f6f; 
     color: white;
     border-radius: 1rem;
     margin-right: 10%;
@@ -7,21 +7,18 @@
     font-size: clamp(1rem, 1.2vw, 1.4rem);
     min-width: fit-content;
     text-align: center;
-    border: 0.15vw solid #E7717D;
     padding-left: 2vw;
     padding-right: 2vw;
     transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.3s ease;
     cursor: pointer;
+    border: none;
 }
 
 .catalogueButton:hover {
-    background-color: #AFD275; 
-    border-color: #AFD275; 
+    background-color: #8a8a8a; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
 }
 
 .catalogueButton:active {
     transform: scale(0.95);
-    background-color: #7E685A; 
-    border-color: #7E685A;
 }

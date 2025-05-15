@@ -1,12 +1,10 @@
 import './recipePreview.css';
 import TagsContainer from '../tagsContainer/tagsContainer';
-import {RecipePreviewProps} from '../../types'
+import { RecipePreviewProps } from '../../types';
 
 export const RecipePreview = (props: RecipePreviewProps) => {
     const { title, description, image, tags } = props;
     console.log('Image Path:', image);
-
-    const tagsDivs = tags.map(tag => <TagsContainer name={tag} key={tag} />);
 
     return (
         <div className='recipePreviewContainer'>
@@ -23,8 +21,13 @@ export const RecipePreview = (props: RecipePreviewProps) => {
                 <div className='recipePreviewDescription'>{description}</div>
             </div>
 
-            <div className='recipePreviewTags'>{tagsDivs}</div>
+            <div className='recipePreviewTags'>
+                {tags.length > 0 ? (
+                    tags.map(tag => <TagsContainer name={tag} key={tag} />)
+                ) : (
+                    <span>Без тегов</span>
+                )}
+            </div>
         </div>
     );
 };
-

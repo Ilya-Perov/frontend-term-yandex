@@ -2,6 +2,7 @@ import './header.css';
 import logo from "../../images/logo.png";
 import { HeaderSearchButton } from '../button/HeaderSearchButton/index';
 import { HeaderCatalogueButton } from '../button/HeaderCatalogueButton/index';
+import { GoToConstructorButtonHeader } from '../button/GoToConsturctorButtonHeader/GoToConstructorButtonHeader';
 
 
 export const Header = () => {
@@ -21,6 +22,7 @@ export const Header = () => {
                 <div className='headerButtonContainer'>
                     <HeaderCatalogueButton />
                     <HeaderSearchButton />
+                    <GoToConstructorButtonHeader />
                 </div>
             </div>
         </div>

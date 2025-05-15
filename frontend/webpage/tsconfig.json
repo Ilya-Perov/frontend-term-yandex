@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-	  "target": "es5", // Можно заменить на es6, если нужно
+	  "target": "es5",
 	  "module": "esnext",
 	  "jsx": "react-jsx",
 	  "esModuleInterop": true,

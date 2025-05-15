@@ -4,7 +4,6 @@
     gap: 1.5rem;
     padding: 2rem;
     max-width: 800px;
-    margin: 0 auto;
     background-color: #C2CAD0;
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -13,7 +12,7 @@
 .recipeInputText {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #7E685A;
+    color: #000000;
     margin-bottom: 0.4rem;
 }
 
@@ -30,9 +29,20 @@
 }
 
 .recipeInputField:focus {
-    border-color: #E7717D;
+    border-color: lightseagreen;
     box-shadow: 0 0 8px rgba(231, 113, 125, 0.3);
     outline: none;
+}
+
+.recipeInputField.error {
+  border-color: #E53935;
+  background-color: #FFECEC;
+}
+
+.errorText {
+  color: #E53935;
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
 }
 
 

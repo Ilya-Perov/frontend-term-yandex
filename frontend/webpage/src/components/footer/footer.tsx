@@ -1,4 +1,4 @@
-import './footer.css';  // Путь к файлу с CSS
+import './footer.css';
 
 const Footer = () => {
   return (

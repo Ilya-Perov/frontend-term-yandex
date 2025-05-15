@@ -2,7 +2,6 @@
     font-family: 'Days One', sans-serif;
     background-color: #C2CAD0; 
     min-height: 100vh;
-    padding-top: 2rem;
     padding-bottom: 0;
 }
 
@@ -18,21 +17,21 @@
 
 .homeTitle {
     font-size: clamp(2.5rem, 5vw, 5rem);
-    color: #7E685A; 
+    color: #000000; 
     margin-bottom: 2rem;
     font-weight: bold;
 }
 
 .homeDescription {
     font-size: clamp(1.2rem, 2.5vw, 2rem);
-    color: #7E685A; 
+    color: #000000; 
     margin-bottom: 3rem;
     width: 80%;
 }
 
 .homeInstructions {
     font-size: clamp(1rem, 2vw, 1.5rem);
-    color: #7E685A;
+    color: #000000;
     width: 80%;
     margin-bottom: 1rem;
 }
@@ -44,7 +43,7 @@
 
 .carouselTitle {
     font-size: clamp(1.8rem, 3vw, 2.5rem);
-    color: #7E685A;
+    color: #000000;
     margin-bottom: 0.5rem; 
     font-weight: bold;
 }
@@ -53,7 +52,8 @@
     padding: 1rem;
     box-sizing: border-box;
     display: flex;
-    justify-content: center;
+    height: 100%;
+    align-items: stretch;
 }
 
 .carouselItem:hover {
@@ -66,6 +66,13 @@
 
 .slick-slide {
     padding: 0; 
+    display: flex !important;
+    height: auto !important;
+    margin-bottom: 2rem;
+}
+
+.slick-track{
+    display: flex !important;
 }
 
 .slick-dots li button:before {
@@ -109,7 +116,7 @@
     top: 1rem;
     right: 1rem;
     padding: 0.5rem 1rem;
-    background-color: #7E685A;
+    background-color: #6f6f6f; 
     color: white;
     border: none;
     border-radius: 4px;
@@ -118,7 +125,12 @@
 }
   
 .closeButton:hover {
-    background-color: #4E3B31;
+    background-color: #8a8a8a; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+}
+
+.closeButton:active {
+    transform: scale(0.95);
 }
 
 @media (max-width: 768px) {
@@ -129,6 +141,10 @@
     .homeDescription,
     .homeInstructions {
         font-size: clamp(1rem, 3vw, 1.3rem); 
+    }
+    .slick-prev,
+    .slick-next {
+        display: none !important; 
     }
 
     .homeCarousel {

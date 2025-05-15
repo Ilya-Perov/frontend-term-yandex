@@ -1,5 +1,5 @@
 .headerText {
-    color: #7E685A; 
+    color: #000000; 
     font-size: clamp(2.6rem, 3.5vw, 3rem);
     text-align: left;
     margin: auto 0;
@@ -8,15 +8,13 @@
 }
 
 .headerContainer {
-    background-color: #AFD275; 
+    background-color: #a7a7a7; 
     margin: auto;
     margin-top: 0;
-    width: 96%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border-radius: 5vw;
     min-height: 80px;
     padding-left: 1vw;
     padding-right: 1vw;

@@ -7,8 +7,8 @@
   }
   
   .constructorButton {
-    background-color: #E7717D; 
-    color: white; 
+    background-color: #a7a7a7; 
+    color: #000000; 
     font-size: clamp(1.2rem, 2vw, 2rem);
     padding: 1.2rem 2.5rem;
     border: none;
@@ -22,13 +22,12 @@
   }
   
   .constructorButton:hover {
-    background-color: #AFD275; 
+    background-color: #8a8a8a; 
     transform: scale(1.05); 
   }
   
   .constructorButton:active {
-    background-color: #7E685A; 
-    transform: scale(0.98); 
+    transform: scale(1); 
   }
   
   .constructorButton:focus {

@@ -5,6 +5,8 @@ import { Header } from "../header";
 import { RecipeDisplay } from "../recipeDisplay/recipeDisplay";
 import { createRecipe } from "../api/api"; 
 import { SuccessModal } from "../successModal/successModal";
+import { FailureModal } from "../failureModal/failureModal";
+import placeholder from '../../images/placeholder.png'
 import './recipeConstructor.css';
 import Footer from "../footer/footer";
 
@@ -13,12 +15,27 @@ export const RecipeConstructor = () => {
   const [description, setDescription] = useState('');
   const [image, setImage] = useState('');
   const [tags, setTags] = useState<string[]>([]);
+  const [tagsInput, setTagsInput] = useState('');
   const [ingredients, setIngredients] = useState<string[]>([]);
   const [ingredientsInput, setIngredientsInput] = useState('');
   const [cookingTime, setCookingtime] = useState(0);
   const [serving, setServing] = useState(0);
   const [instructions, setInstructions] = useState('');
   const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [showFailureModal, setShowFailureModal] = useState(false);
+  const isFormValid = 
+    title.trim() !== '' &&
+    description.trim() !== '' &&
+    image.trim() !== '' &&
+    tags.length > 0 &&
+    ingredients.length > 0 &&
+    cookingTime > 0 &&
+    serving > 0 &&
+    instructions.trim() !== ''; 
+
+  useEffect(() => {
+    setTagsInput(tags.join(', '));
+  }, [tags]);
 
   useEffect(() => {
     setIngredientsInput(ingredients.join(', '));
@@ -41,8 +58,7 @@ export const RecipeConstructor = () => {
       setShowSuccessModal(true);
       handleReset();
     } catch (err) {
-      console.error('Ошибка при сохранении рецепта:', err);
-      alert('Ошибка при сохранении рецепта');
+      setShowFailureModal(true);
     }
   };
 
@@ -55,6 +71,7 @@ export const RecipeConstructor = () => {
     setServing(0);
     setImage('');
     setTags([]);
+    setTagsInput('');
     setInstructions('');
   };
 
@@ -71,7 +88,7 @@ export const RecipeConstructor = () => {
           <RecipePreview
             title={title || 'Без названия'}
             description={description || 'Без описания'}
-            image={image}
+            image={image || placeholder}
             tags={tags.length > 0 ? tags : ['Без тегов']}
           />
         </div>
@@ -81,6 +98,7 @@ export const RecipeConstructor = () => {
           description={description}
           image={image}
           tags={tags}
+          tagsInput={tagsInput}
           ingredients={ingredients}
           ingredientsInput={ingredientsInput}
           cookingTime={cookingTime}
@@ -90,6 +108,7 @@ export const RecipeConstructor = () => {
           setDescription={setDescription}
           setImage={setImage}
           setTags={setTags}
+          setTagsInput={setTagsInput}
           setIngredients={setIngredients}
           setIngredientsInput={setIngredientsInput}
           setCookingTime={setCookingtime}
@@ -103,16 +122,16 @@ export const RecipeConstructor = () => {
       <RecipeDisplay
         title={title || 'Без названия'}
         description={description || 'Без описания'}
-        image={image}
-        tags={tags.length > 0 ? tags : ['Без тегов']}
-        ingredients={ingredients.length > 0 ? ingredients : ['Нет ингредиентов']}
+        image={image || placeholder}
+        tags={tags}
+        ingredients={ingredients}
         cookingTime={cookingTime}
         servings={serving}
         instructions={instructions || 'Нет инструкции'}
       />
 
       <div className="formButtonContainer">
-        <button className="formButton save" onClick={handleSubmit}>Сохранить</button>
+        <button className="formButton save" onClick={handleSubmit} disabled={!isFormValid}>Сохранить</button>
         <button className="formButton reset" onClick={handleReset}>Сбросить</button>
       </div>
 
@@ -120,6 +139,13 @@ export const RecipeConstructor = () => {
         <SuccessModal 
           message="Рецепт успешно сохранён!" 
           onClose={() => setShowSuccessModal(false)} 
+        />
+      )}
+
+      {showFailureModal && (
+        <FailureModal
+          message="Ошибка! Рецепт не был сохранен!"
+          onClose={() => setShowFailureModal(false)} 
         />
       )}
     </div>
