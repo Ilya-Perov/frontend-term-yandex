@@ -2,7 +2,6 @@
     background-color: #6f6f6f; 
     color: white;
     border-radius: 1rem;
-    margin-right: 10%;
     width: 10vw;
     font-size: clamp(1rem, 1.2vw, 1.4rem);
     min-width: fit-content;

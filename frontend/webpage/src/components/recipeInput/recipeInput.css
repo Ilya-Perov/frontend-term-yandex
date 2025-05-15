@@ -45,6 +45,11 @@
   margin-left: 0.5rem;
 }
 
+@media (max-width: 850px) {
+    .recipeInputBody{
+        width: 50%;
+    }
+}
 
 @media (max-width: 768px) {
     .recipeInputText {
@@ -54,11 +59,15 @@
     .recipeInputField {
         font-size: 0.95rem;
     }
+    
+    .recipeInputBody{
+        width: 80%;
+    }
 }
 
 @media (max-width: 480px) {
     .recipeInputBody {
-        padding: 1rem;
+        align-self: center;
     }
 
     .recipeInputField {

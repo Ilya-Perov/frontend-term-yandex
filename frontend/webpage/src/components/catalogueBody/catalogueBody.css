@@ -111,4 +111,9 @@
   .closeButton {
     font-size: 0.8rem;
   }
+
+  .catalogueGrid{
+    display: flex;
+    flex-direction: column;
+  }
 }
