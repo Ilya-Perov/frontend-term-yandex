@@ -54,13 +54,19 @@ const CatalogueBody = () => {
       <div className="catalogueHeader">
         <h1 className="catalogueTitle">Каталог рецептов</h1>
         <p className="catalogueDescription">
-          Здесь вы найдёте разнообразные рецепты на каждый день — от быстрых завтраков до изысканных ужинов. Выберите блюдо, нажмите на него, откройте рецепт и готовьте с удовольствием!
+          Здесь вы найдёте разнообразные рецепты на каждый день — от быстрых
+          завтраков до изысканных ужинов. Выберите блюдо, нажмите на него,
+          откройте рецепт и готовьте с удовольствием!
         </p>
       </div>
 
       <div className="catalogueGrid">
         {recipes.map((recipe) => (
-          <div key={recipe.title} className="catalogueItem" onClick={() => handleRecipeClick(recipe)}>
+          <div
+            key={recipe.title}
+            className="catalogueItem"
+            onClick={() => handleRecipeClick(recipe)}
+          >
             <RecipePreview
               title={recipe.title}
               description={recipe.description}
@@ -74,7 +80,9 @@ const CatalogueBody = () => {
       {selectedRecipe && (
         <div className="modal" onClick={handleOverlayClick}>
           <div className="modalContent">
-            <button onClick={handleCloseRecipe} className="closeButton">Закрыть</button>
+            <button onClick={handleCloseRecipe} className="closeButton">
+              Закрыть
+            </button>
             <RecipeDisplay
               title={selectedRecipe.title}
               description={selectedRecipe.description}

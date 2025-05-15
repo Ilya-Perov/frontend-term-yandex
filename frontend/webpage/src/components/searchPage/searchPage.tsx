@@ -14,8 +14,8 @@ const SearchPage = () => {
   const [filteredRecipes, setFilteredRecipes] = useState<Recipe[]>([]);
   const [allTags, setAllTags] = useState<string[]>([]);
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
-  const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null); 
-  const [searchQuery, setSearchQuery] = useState<string>(''); 
+  const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null);
+  const [searchQuery, setSearchQuery] = useState<string>('');
 
   useEffect(() => {
     const loadRecipes = async () => {
@@ -37,12 +37,12 @@ const SearchPage = () => {
     let filtered = recipes;
 
     if (selectedTag) {
-      filtered = filtered.filter(recipe => recipe.tags.includes(selectedTag));
+      filtered = filtered.filter((recipe) => recipe.tags.includes(selectedTag));
     }
 
     if (searchQuery) {
-      filtered = filtered.filter(recipe =>
-        recipe.title.toLowerCase().includes(searchQuery.toLowerCase())
+      filtered = filtered.filter((recipe) =>
+        recipe.title.toLowerCase().includes(searchQuery.toLowerCase()),
       );
     }
 
@@ -104,7 +104,11 @@ const SearchPage = () => {
 
         <div className="recipesGrid">
           {filteredRecipes.map((recipe) => (
-            <div key={recipe.title} className="catalogueItem" onClick={() => handleRecipeClick(recipe)}>
+            <div
+              key={recipe.title}
+              className="catalogueItem"
+              onClick={() => handleRecipeClick(recipe)}
+            >
               <RecipePreview
                 title={recipe.title}
                 description={recipe.description}
@@ -120,7 +124,9 @@ const SearchPage = () => {
       {selectedRecipe && (
         <div className="modal" onClick={handleOverlayClick}>
           <div className="modalContent">
-            <button onClick={handleCloseRecipe} className="closeButton">Закрыть</button>
+            <button onClick={handleCloseRecipe} className="closeButton">
+              Закрыть
+            </button>
             <RecipeDisplay
               title={selectedRecipe.title}
               description={selectedRecipe.description}

@@ -1,1 +1,1 @@
-export {HeaderCatalogueButton} from './HeaderCatalogueButton'
+export { HeaderCatalogueButton } from './HeaderCatalogueButton';

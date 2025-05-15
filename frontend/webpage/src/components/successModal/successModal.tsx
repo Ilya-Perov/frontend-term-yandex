@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import "./successModal.css";
+import { useEffect } from 'react';
+import './successModal.css';
 
 interface SuccessModalProps {
   message: string;
@@ -9,13 +9,13 @@ interface SuccessModalProps {
 export const SuccessModal = ({ message, onClose }: SuccessModalProps) => {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
+      if (e.key === 'Escape') {
         onClose();
       }
     };
 
-    document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
   }, [onClose]);
 
   const handleOverlayClick = () => {
@@ -30,7 +30,9 @@ export const SuccessModal = ({ message, onClose }: SuccessModalProps) => {
     <div className="successModalOverlay" onClick={handleOverlayClick}>
       <div className="successModalContent" onClick={handleContentClick}>
         <div className="successMessage">{message}</div>
-        <button className="modalCloseButton" onClick={onClose}>Закрыть</button>
+        <button className="modalCloseButton" onClick={onClose}>
+          Закрыть
+        </button>
       </div>
     </div>
   );

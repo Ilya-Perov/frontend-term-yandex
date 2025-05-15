@@ -5,9 +5,9 @@ interface TagDropdownProps {
 }
 
 const TagDropdown = (props: TagDropdownProps) => {
-  const { tags, selectedTag, onTagSelect} = props;
+  const { tags, selectedTag, onTagSelect } = props;
   return (
-    <select 
+    <select
       value={selectedTag || ''}
       onChange={(e) => onTagSelect(e.target.value)}
       className="tagDropdown"

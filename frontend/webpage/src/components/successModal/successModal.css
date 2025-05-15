@@ -12,13 +12,13 @@
 }
 
 .successModalContent {
-  background-color: #F1F0EE;
+  background-color: #f1f0ee;
   padding: 2rem 3rem;
   border-radius: 1rem;
   text-align: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   font-family: 'Days One', sans-serif;
-  color: #7E685A;
+  color: #7e685a;
 }
 
 .successMessage {
@@ -27,17 +27,19 @@
 }
 
 .modalCloseButton {
-  background-color: #7E685A;
+  background-color: #7e685a;
   color: white;
   border: none;
   padding: 0.6rem 1.5rem;
   font-size: 1.4rem;
   border-radius: 0.4rem;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
 }
 
 .modalCloseButton:hover {
-  background-color: #6C5A47;
+  background-color: #6c5a47;
   transform: scale(1.05);
 }

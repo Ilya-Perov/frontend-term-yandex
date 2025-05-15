@@ -5,16 +5,19 @@ export const GoToConstructorButtonHeader = () => {
   const navigate = useNavigate();
 
   const goToConstructor = () => {
-      navigate('/recipeConstructor');
+    navigate('/recipeConstructor');
   };
 
   return (
     <div>
-      <button 
-          type="button"
-          className="constructorButtonHeader"
-          onClick={goToConstructor}>
-          Конструктор<br />рецептов
+      <button
+        type="button"
+        className="constructorButtonHeader"
+        onClick={goToConstructor}
+      >
+        Конструктор
+        <br />
+        рецептов
       </button>
     </div>
   );

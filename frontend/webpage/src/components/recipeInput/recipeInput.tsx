@@ -25,16 +25,26 @@ interface RecipeInputProps {
 }
 
 export const RecipeInput = ({
-  title, setTitle,
-  description, setDescription,
-  image, setImage,
-  tags, setTags,
-  tagsInput, setTagsInput,
-  ingredients, setIngredients,
-  ingredientsInput, setIngredientsInput,
-  cookingTime, setCookingTime,
-  serving, setServing,
-  instructions, setInstructions
+  title,
+  setTitle,
+  description,
+  setDescription,
+  image,
+  setImage,
+  tags,
+  setTags,
+  tagsInput,
+  setTagsInput,
+  ingredients,
+  setIngredients,
+  ingredientsInput,
+  setIngredientsInput,
+  cookingTime,
+  setCookingTime,
+  serving,
+  setServing,
+  instructions,
+  setInstructions,
 }: RecipeInputProps) => {
   const [errors, setErrors] = useState({
     title: '',
@@ -44,7 +54,7 @@ export const RecipeInput = ({
     ingredients: '',
     cookingTime: '',
     serving: '',
-    instructions: ''
+    instructions: '',
   });
 
   useEffect(() => {
@@ -59,15 +69,24 @@ export const RecipeInput = ({
       instructions: instructions.trim() ? '' : 'Инструкции обязательны',
     };
     setErrors(newErrors);
-  }, [title, description, image, tags, ingredients, cookingTime, serving, instructions]);
+  }, [
+    title,
+    description,
+    image,
+    tags,
+    ingredients,
+    cookingTime,
+    serving,
+    instructions,
+  ]);
 
   const getClassName = (field: keyof typeof errors) =>
     `recipeInputField ${errors[field] ? 'error' : ''}`;
 
   return (
-    <div className='recipeInputBody'>
+    <div className="recipeInputBody">
       {/* Название */}
-      <div className='recipeInputText'>Введите название</div>
+      <div className="recipeInputText">Введите название</div>
       <input
         className={getClassName('title')}
         value={title}
@@ -76,26 +95,28 @@ export const RecipeInput = ({
       {errors.title && <div className="errorText">{errors.title}</div>}
 
       {/* Описание */}
-      <div className='recipeInputText'>Введите описание</div>
+      <div className="recipeInputText">Введите описание</div>
       <input
         className={getClassName('description')}
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
-      {errors.description && <div className="errorText">{errors.description}</div>}
+      {errors.description && (
+        <div className="errorText">{errors.description}</div>
+      )}
 
       {/* Изображение */}
-      <div className='recipeInputText'>Введите ссылку на изображение</div>
+      <div className="recipeInputText">Введите ссылку на изображение</div>
       <input
         className={getClassName('image')}
         value={image}
         onChange={(e) => setImage(e.target.value)}
-        type='url'
+        type="url"
       />
       {errors.image && <div className="errorText">{errors.image}</div>}
 
       {/* Теги */}
-      <div className='recipeInputText'>Введите теги (через запятую)</div>
+      <div className="recipeInputText">Введите теги (через запятую)</div>
       <input
         className={getClassName('tags')}
         value={tagsInput}
@@ -104,15 +125,15 @@ export const RecipeInput = ({
           setTags(
             tagsInput
               .split(', ')
-              .map(i => i.trim())
-              .filter(i => i.length > 0)
+              .map((i) => i.trim())
+              .filter((i) => i.length > 0),
           )
         }
       />
       {errors.tags && <div className="errorText">{errors.tags}</div>}
 
       {/* Ингредиенты */}
-      <div className='recipeInputText'>Введите ингредиенты (через запятую)</div>
+      <div className="recipeInputText">Введите ингредиенты (через запятую)</div>
       <input
         className={getClassName('ingredients')}
         value={ingredientsInput}
@@ -121,44 +142,52 @@ export const RecipeInput = ({
           setIngredients(
             ingredientsInput
               .split(', ')
-              .map(i => i.trim())
-              .filter(i => i.length > 0)
+              .map((i) => i.trim())
+              .filter((i) => i.length > 0),
           )
         }
       />
-      {errors.ingredients && <div className="errorText">{errors.ingredients}</div>}
+      {errors.ingredients && (
+        <div className="errorText">{errors.ingredients}</div>
+      )}
 
       {/* Время приготовления */}
-      <div className='recipeInputText'>Введите время приготовления (в минутах)</div>
+      <div className="recipeInputText">
+        Введите время приготовления (в минутах)
+      </div>
       <input
         className={getClassName('cookingTime')}
-        type='number'
-        min='0'
+        type="number"
+        min="0"
         value={cookingTime}
         onChange={(e) => setCookingTime(Number(e.target.value))}
       />
-      {errors.cookingTime && <div className="errorText">{errors.cookingTime}</div>}
+      {errors.cookingTime && (
+        <div className="errorText">{errors.cookingTime}</div>
+      )}
 
       {/* Кол-во порций */}
-      <div className='recipeInputText'>Введите количество порций</div>
+      <div className="recipeInputText">Введите количество порций</div>
       <input
         className={getClassName('serving')}
-        type='number'
-        min='0'
+        type="number"
+        min="0"
         value={serving}
         onChange={(e) => setServing(Number(e.target.value))}
       />
       {errors.serving && <div className="errorText">{errors.serving}</div>}
 
       {/* Инструкции */}
-      <div className='recipeInputText'>Введите инструкции</div>
+      <div className="recipeInputText">Введите инструкции</div>
       <textarea
         className={getClassName('instructions')}
         value={instructions}
         onChange={(e) => setInstructions(e.target.value)}
         rows={6}
       />
-      {errors.instructions && <div className="errorText">{errors.instructions}</div>}
+      {errors.instructions && (
+        <div className="errorText">{errors.instructions}</div>
+      )}
     </div>
   );
 };

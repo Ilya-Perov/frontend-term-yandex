@@ -1,21 +1,19 @@
-import "./HeaderSearchButton.css";
-import { useNavigate } from "react-router";
+import './HeaderSearchButton.css';
+import { useNavigate } from 'react-router';
 
-type headerSearchButtonProps = {}
+type headerSearchButtonProps = {};
 
-export const HeaderSearchButton = () =>{
-    const navigate = useNavigate();
+export const HeaderSearchButton = () => {
+  const navigate = useNavigate();
 
-    const goToSearch = () => {
-        navigate('/search');
-    };
-    return (
-        <button 
-        type='button'
-        className='searchButton'
-        onClick={goToSearch}>
-                Поиск<br/>рецептов
-        </button>
-    );
+  const goToSearch = () => {
+    navigate('/search');
+  };
+  return (
+    <button type="button" className="searchButton" onClick={goToSearch}>
+      Поиск
+      <br />
+      рецептов
+    </button>
+  );
 };
-

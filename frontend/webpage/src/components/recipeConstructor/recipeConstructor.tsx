@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
-import { RecipeInput } from "../recipeInput/recipeInput";
-import { RecipePreview } from "../recipePreview/recipePreview";
-import { Header } from "../header";
-import { RecipeDisplay } from "../recipeDisplay/recipeDisplay";
-import { createRecipe } from "../api/api"; 
-import { SuccessModal } from "../successModal/successModal";
-import { FailureModal } from "../failureModal/failureModal";
-import placeholder from '../../images/placeholder.png'
+import { useState, useEffect } from 'react';
+import { RecipeInput } from '../recipeInput/recipeInput';
+import { RecipePreview } from '../recipePreview/recipePreview';
+import { Header } from '../header';
+import { RecipeDisplay } from '../recipeDisplay/recipeDisplay';
+import { createRecipe } from '../api/api';
+import { SuccessModal } from '../successModal/successModal';
+import { FailureModal } from '../failureModal/failureModal';
+import placeholder from '../../images/placeholder.png';
 import './recipeConstructor.css';
-import Footer from "../footer/footer";
+import Footer from '../footer/footer';
 
 export const RecipeConstructor = () => {
   const [title, setTitle] = useState('');
@@ -23,7 +23,7 @@ export const RecipeConstructor = () => {
   const [instructions, setInstructions] = useState('');
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [showFailureModal, setShowFailureModal] = useState(false);
-  const isFormValid = 
+  const isFormValid =
     title.trim() !== '' &&
     description.trim() !== '' &&
     image.trim() !== '' &&
@@ -31,7 +31,7 @@ export const RecipeConstructor = () => {
     ingredients.length > 0 &&
     cookingTime > 0 &&
     serving > 0 &&
-    instructions.trim() !== ''; 
+    instructions.trim() !== '';
 
   useEffect(() => {
     setTagsInput(tags.join(', '));
@@ -50,7 +50,7 @@ export const RecipeConstructor = () => {
       cooking_time: cookingTime,
       servings: serving,
       image_url: image,
-      tags
+      tags,
     };
 
     try {
@@ -77,79 +77,87 @@ export const RecipeConstructor = () => {
 
   return (
     <div className="content">
-    <div className="recipeConstructor">
-      <Header />
-      <div className="recipeConstructorTitle">Конструктор рецептов</div>
-      <div className="recipeConstructorDivider"></div>
+      <div className="recipeConstructor">
+        <Header />
+        <div className="recipeConstructorTitle">Конструктор рецептов</div>
+        <div className="recipeConstructorDivider"></div>
 
-      <div className="recipeConstructorTitle">Превью рецепта</div>
-      <div className="recipeConstructorBody">
-        <div className="recipePreviewWrapper">
-          <RecipePreview
-            title={title || 'Без названия'}
-            description={description || 'Без описания'}
-            image={image || placeholder}
-            tags={tags.length > 0 ? tags : ['Без тегов']}
+        <div className="recipeConstructorTitle">Превью рецепта</div>
+        <div className="recipeConstructorBody">
+          <div className="recipePreviewWrapper">
+            <RecipePreview
+              title={title || 'Без названия'}
+              description={description || 'Без описания'}
+              image={image || placeholder}
+              tags={tags.length > 0 ? tags : ['Без тегов']}
+            />
+          </div>
+
+          <RecipeInput
+            title={title}
+            description={description}
+            image={image}
+            tags={tags}
+            tagsInput={tagsInput}
+            ingredients={ingredients}
+            ingredientsInput={ingredientsInput}
+            cookingTime={cookingTime}
+            serving={serving}
+            instructions={instructions}
+            setTitle={setTitle}
+            setDescription={setDescription}
+            setImage={setImage}
+            setTags={setTags}
+            setTagsInput={setTagsInput}
+            setIngredients={setIngredients}
+            setIngredientsInput={setIngredientsInput}
+            setCookingTime={setCookingtime}
+            setServing={setServing}
+            setInstructions={setInstructions}
           />
         </div>
-        
-        <RecipeInput
-          title={title}
-          description={description}
-          image={image}
+
+        <div className="recipeConstructorDivider"></div>
+        <div className="recipeConstructorTitle">Превью полного рецепта</div>
+        <RecipeDisplay
+          title={title || 'Без названия'}
+          description={description || 'Без описания'}
+          image={image || placeholder}
           tags={tags}
-          tagsInput={tagsInput}
           ingredients={ingredients}
-          ingredientsInput={ingredientsInput}
           cookingTime={cookingTime}
-          serving={serving}
-          instructions={instructions}
-          setTitle={setTitle}
-          setDescription={setDescription}
-          setImage={setImage}
-          setTags={setTags}
-          setTagsInput={setTagsInput}
-          setIngredients={setIngredients}
-          setIngredientsInput={setIngredientsInput}
-          setCookingTime={setCookingtime}
-          setServing={setServing}
-          setInstructions={setInstructions}
+          servings={serving}
+          instructions={instructions || 'Нет инструкции'}
         />
+
+        <div className="formButtonContainer">
+          <button
+            className="formButton save"
+            onClick={handleSubmit}
+            disabled={!isFormValid}
+          >
+            Сохранить
+          </button>
+          <button className="formButton reset" onClick={handleReset}>
+            Сбросить
+          </button>
+        </div>
+
+        {showSuccessModal && (
+          <SuccessModal
+            message="Рецепт успешно сохранён!"
+            onClose={() => setShowSuccessModal(false)}
+          />
+        )}
+
+        {showFailureModal && (
+          <FailureModal
+            message="Ошибка! Рецепт не был сохранен!"
+            onClose={() => setShowFailureModal(false)}
+          />
+        )}
       </div>
-
-      <div className="recipeConstructorDivider"></div>
-      <div className="recipeConstructorTitle">Превью полного рецепта</div>
-      <RecipeDisplay
-        title={title || 'Без названия'}
-        description={description || 'Без описания'}
-        image={image || placeholder}
-        tags={tags}
-        ingredients={ingredients}
-        cookingTime={cookingTime}
-        servings={serving}
-        instructions={instructions || 'Нет инструкции'}
-      />
-
-      <div className="formButtonContainer">
-        <button className="formButton save" onClick={handleSubmit} disabled={!isFormValid}>Сохранить</button>
-        <button className="formButton reset" onClick={handleReset}>Сбросить</button>
-      </div>
-
-      {showSuccessModal && (
-        <SuccessModal 
-          message="Рецепт успешно сохранён!" 
-          onClose={() => setShowSuccessModal(false)} 
-        />
-      )}
-
-      {showFailureModal && (
-        <FailureModal
-          message="Ошибка! Рецепт не был сохранен!"
-          onClose={() => setShowFailureModal(false)} 
-        />
-      )}
-    </div>
-    <Footer/>
+      <Footer />
     </div>
   );
 };

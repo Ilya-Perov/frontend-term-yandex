@@ -5,16 +5,19 @@ export const GoToConstructorButton = () => {
   const navigate = useNavigate();
 
   const goToConstructor = () => {
-      navigate('/recipeConstructor');
+    navigate('/recipeConstructor');
   };
 
   return (
     <div className="buttonContainer">
-      <button 
-          type="button"
-          className="constructorButton"
-          onClick={goToConstructor}>
-          Конструктор<br />рецептов
+      <button
+        type="button"
+        className="constructorButton"
+        onClick={goToConstructor}
+      >
+        Конструктор
+        <br />
+        рецептов
       </button>
     </div>
   );

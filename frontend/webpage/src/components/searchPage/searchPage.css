@@ -1,77 +1,77 @@
 .content {
-    font-family: 'Days One', sans-serif;
-    background-color: #C2CAD0;
-    min-height: 100vh;
-    display: flex;      
-    flex-direction: column;  
-  }
-  
-  .searchPage {
-    padding-left: 5vw;
-    padding-right: 5vw;
-    flex: 1;  
-  }
+  font-family: 'Days One', sans-serif;
+  background-color: #c2cad0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.searchPage {
+  padding-left: 5vw;
+  padding-right: 5vw;
+  flex: 1;
+}
 
 .searchContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 3vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3vw;
 }
 
 .searchTitle {
-    font-size: clamp(2.2rem, 3vw, 4rem);
-    margin-bottom: 1vh;
-    color: #000000;
+  font-size: clamp(2.2rem, 3vw, 4rem);
+  margin-bottom: 1vh;
+  color: #000000;
 }
 
 .searchDescription {
-    font-size: clamp(1.2rem, 2.5vw, 2rem);
-    color: #000000;
-    margin-bottom: 2rem;
-    width: 80%;
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  color: #000000;
+  margin-bottom: 2rem;
+  width: 80%;
 }
 
 .searchForm {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .searchInputContainer {
-    width: 80%;
-    max-width: 600px;
-    margin-bottom: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  width: 80%;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .searchInput {
-    padding: 0.8rem;
-    border-radius: 8px;
-    border: 1px solid #000000;
-    font-size: 1rem;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #000000;
+  font-size: 1rem;
 }
 
 .tagDropdown {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    border: 1px solid #000000;
-    border-radius: 4px;
-    margin-bottom: 1rem;
-    background-color: #ffffff;
-    color: #000000;
-    cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  background-color: #ffffff;
+  color: #000000;
+  cursor: pointer;
 }
 
 .tagDropdown:focus {
-    outline: none;
-    border-color: #bebebe;
+  outline: none;
+  border-color: #bebebe;
 }
 
 .tagItem.selected {
-    background-color: #7E685A;
-    color: white;
+  background-color: #7e685a;
+  color: white;
 }
 
 .recipesGrid {
@@ -80,7 +80,7 @@
   gap: 2rem;
   padding: 2rem;
   justify-items: center;
-  align-items: stretch; 
+  align-items: stretch;
 }
 
 .recipesGrid .catalogueItem {
@@ -91,89 +91,89 @@
 }
 
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
 .modalContent {
-    background-color: #bebebe;
-    padding: 2rem;
-    border-radius: 8px;
-    width: 60%;
-    max-width: 800px;
-    overflow-y: auto;
+  background-color: #bebebe;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 60%;
+  max-width: 800px;
+  overflow-y: auto;
 }
-  
+
 .closeButton {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #6f6f6f; 
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #6f6f6f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
 }
-  
+
 .closeButton:hover {
-    background-color: #8a8a8a; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+  background-color: #8a8a8a;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .closeButton:active {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 @media (max-width: 768px) {
-    .searchTitle {
-        font-size: clamp(2rem, 4vw, 4rem);
-    }
-    
-    .modalContent {
-        width: 80%;
-    }
+  .searchTitle {
+    font-size: clamp(2rem, 4vw, 4rem);
+  }
 
-    .searchDescription {
-        font-size: clamp(1rem, 3vw, 1.3rem);
-    }
+  .modalContent {
+    width: 80%;
+  }
 
-    .searchInputContainer {
-        width: 90%;
-    }
+  .searchDescription {
+    font-size: clamp(1rem, 3vw, 1.3rem);
+  }
 
-    .recipesGrid {
-        padding: 1rem;
-        gap: 1.5rem;
-    }
+  .searchInputContainer {
+    width: 90%;
+  }
+
+  .recipesGrid {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
 }
 
 @media (min-width: 1024px) {
-    .recipesGrid {
-        justify-content: flex-start; 
-    }
+  .recipesGrid {
+    justify-content: flex-start;
+  }
 }
 
 @media (max-width: 500px) {
-    .searchTitle {
-        font-size: clamp(2rem, 5vw, 3.5rem);
-    }
+  .searchTitle {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+  }
 
-    .searchDescription {
-        font-size: 1.2rem;
-    }
+  .searchDescription {
+    font-size: 1.2rem;
+  }
 
-    .recipesGrid {
-        display: flex;
-        flex-direction: column;
-    }
+  .recipesGrid {
+    display: flex;
+    flex-direction: column;
+  }
 }

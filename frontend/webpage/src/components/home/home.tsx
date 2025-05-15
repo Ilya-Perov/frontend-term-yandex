@@ -8,14 +8,14 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { useEffect, useState } from 'react';
 import { fetchRecipes } from '../api/api';
-import { RecipePreview } from '../recipePreview/recipePreview'; 
+import { RecipePreview } from '../recipePreview/recipePreview';
 import { Recipe } from '../../types';
-import Footer from '../footer/footer'
-import { RecipeDisplay } from '../recipeDisplay/recipeDisplay'; 
+import Footer from '../footer/footer';
+import { RecipeDisplay } from '../recipeDisplay/recipeDisplay';
 
 export const Home = () => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
-  const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null); 
+  const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null);
 
   useEffect(() => {
     const loadRecipes = async () => {
@@ -50,7 +50,7 @@ export const Home = () => {
       {
         breakpoint: 960,
         settings: {
-          slidesToShow: 1.5, 
+          slidesToShow: 1.5,
           slidesToScroll: 1,
         },
       },
@@ -101,18 +101,22 @@ export const Home = () => {
   }, []);
 
   return (
-    <div className='home'>
+    <div className="home">
       <Header />
-      <div className='homeContent'>
-        <h1 className='homeTitle'>Добро пожаловать на сайт "Все рецепты здесь!"</h1>
-        <p className='homeDescription'>
-          Здесь вы можете создавать, редактировать и делиться своими любимыми рецептами.
-          Пошаговые инструкции, точные ингредиенты, время приготовления и советы — всё,
-          чтобы ваши блюда всегда получались вкусными и аппетитными.
+      <div className="homeContent">
+        <h1 className="homeTitle">
+          Добро пожаловать на сайт "Все рецепты здесь!"
+        </h1>
+        <p className="homeDescription">
+          Здесь вы можете создавать, редактировать и делиться своими любимыми
+          рецептами. Пошаговые инструкции, точные ингредиенты, время
+          приготовления и советы — всё, чтобы ваши блюда всегда получались
+          вкусными и аппетитными.
         </p>
-        <p className='homeInstructions'>
-          Для того, чтобы начать, просто создайте новый рецепт в разделе "Конструктор рецептов" и поделитесь им с миром.
-          С нами кулинария станет ещё увлекательней!
+        <p className="homeInstructions">
+          Для того, чтобы начать, просто создайте новый рецепт в разделе
+          "Конструктор рецептов" и поделитесь им с миром. С нами кулинария
+          станет ещё увлекательней!
         </p>
       </div>
 
@@ -120,7 +124,11 @@ export const Home = () => {
         <h2 className="carouselTitle">Последние рецепты</h2>
         <Slider {...sliderSettings}>
           {recipes.map((recipe) => (
-            <div key={recipe.id} className="carouselItem" onClick={() => handleRecipeClick(recipe)}>
+            <div
+              key={recipe.id}
+              className="carouselItem"
+              onClick={() => handleRecipeClick(recipe)}
+            >
               <RecipePreview
                 title={recipe.title}
                 description={recipe.description}
@@ -137,7 +145,9 @@ export const Home = () => {
       {selectedRecipe && (
         <div className="modal" onClick={handleOverlayClick}>
           <div className="modalContent">
-            <button onClick={handleCloseRecipe} className="closeButton">Закрыть</button>
+            <button onClick={handleCloseRecipe} className="closeButton">
+              Закрыть
+            </button>
             <RecipeDisplay
               title={selectedRecipe.title}
               description={selectedRecipe.description}

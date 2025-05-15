@@ -1,1 +1,1 @@
-export {HeaderSearchButton} from './HeaderSearchButton'
+export { HeaderSearchButton } from './HeaderSearchButton';

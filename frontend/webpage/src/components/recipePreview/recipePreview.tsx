@@ -3,31 +3,31 @@ import TagsContainer from '../tagsContainer/tagsContainer';
 import { RecipePreviewProps } from '../../types';
 
 export const RecipePreview = (props: RecipePreviewProps) => {
-    const { title, description, image, tags } = props;
-    console.log('Image Path:', image);
+  const { title, description, image, tags } = props;
+  console.log('Image Path:', image);
 
-    return (
-        <div className='recipePreviewContainer'>
-            <div className='recipePreviewImageWrapper'>
-                <img
-                    className='recipePreviewImage'
-                    src={image ?? '/placeholder.png'}  
-                    alt="Изображение для рецепта"
-                />
-            </div>
+  return (
+    <div className="recipePreviewContainer">
+      <div className="recipePreviewImageWrapper">
+        <img
+          className="recipePreviewImage"
+          src={image ?? '/placeholder.png'}
+          alt="Изображение для рецепта"
+        />
+      </div>
 
-            <div className='recipePreviewTextContainer'>
-                <div className='recipePreviewName'>{title}</div>
-                <div className='recipePreviewDescription'>{description}</div>
-            </div>
+      <div className="recipePreviewTextContainer">
+        <div className="recipePreviewName">{title}</div>
+        <div className="recipePreviewDescription">{description}</div>
+      </div>
 
-            <div className='recipePreviewTags'>
-                {tags.length > 0 ? (
-                    tags.map(tag => <TagsContainer name={tag} key={tag} />)
-                ) : (
-                    <span>Без тегов</span>
-                )}
-            </div>
-        </div>
-    );
+      <div className="recipePreviewTags">
+        {tags.length > 0 ? (
+          tags.map((tag) => <TagsContainer name={tag} key={tag} />)
+        ) : (
+          <span>Без тегов</span>
+        )}
+      </div>
+    </div>
+  );
 };
