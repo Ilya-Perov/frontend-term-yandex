@@ -7,32 +7,32 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
     publicPath: '/', // Important for react-router
-    clean: true,     // Clean 'dist' before each build
+    clean: true, // Clean 'dist' before each build
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js']
+    extensions: ['.tsx', '.ts', '.js'],
   },
   module: {
     rules: [
       {
         test: /\.(ts|tsx)$/,
         use: 'ts-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(png|jpe?g|gif|svg|ttf|woff2?|eot)$/,
-        type: 'asset/resource'
-      }
-    ]
+        type: 'asset/resource',
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html'
-    })
+      template: './public/index.html',
+    }),
   ],
   devServer: {
     static: {
@@ -40,7 +40,7 @@ module.exports = {
     },
     historyApiFallback: true, // Required for React Router
     open: true,
-    port: 3000
+    port: 3000,
   },
-  mode: 'development' // Overridden by npm run build
+  mode: 'development', // Overridden by npm run build
 };

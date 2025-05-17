@@ -1,19 +1,19 @@
 import '../../vendor/normalize.css';
 import '../../fonts/font.css';
 import './home.css';
-import { Header } from '../header/index';
-import { GoToConstructorButton } from '../button/GoToConstructorButton/GoToConstructorButton';
+import ToConstructorButton from './__toConstructorButton/home__toConstructorButton';
+import Header from '../header/header';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { useEffect, useState } from 'react';
-import { fetchRecipes } from '../api/api';
-import { RecipePreview } from '../recipePreview/recipePreview';
+import { fetchRecipes } from '../../api/api';
+import RecipePreview from '../recipePreview/recipePreview';
 import { Recipe } from '../../types';
 import Footer from '../footer/footer';
-import { RecipeDisplay } from '../recipeDisplay/recipeDisplay';
+import RecipeModal from '../modal/_recipe/modal_recipe';
 
-export const Home = () => {
+const Home = () => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null);
 
@@ -139,28 +139,14 @@ export const Home = () => {
           ))}
         </Slider>
       </div>
-      <GoToConstructorButton />
+      <ToConstructorButton />
       <Footer />
 
       {selectedRecipe && (
-        <div className="modal" onClick={handleOverlayClick}>
-          <div className="modalContent">
-            <button onClick={handleCloseRecipe} className="closeButton">
-              Закрыть
-            </button>
-            <RecipeDisplay
-              title={selectedRecipe.title}
-              description={selectedRecipe.description}
-              image={selectedRecipe.image_url}
-              tags={selectedRecipe.tags}
-              ingredients={selectedRecipe.ingredients}
-              cookingTime={selectedRecipe.cooking_time}
-              servings={selectedRecipe.servings}
-              instructions={selectedRecipe.instructions}
-            />
-          </div>
-        </div>
+        <RecipeModal recipe={selectedRecipe} onClose={handleCloseRecipe} />
       )}
     </div>
   );
 };
+
+export default Home;

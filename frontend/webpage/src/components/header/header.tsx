@@ -1,10 +1,10 @@
 import './header.css';
 import logo from '../../images/logo.png';
-import { HeaderSearchButton } from '../button/HeaderSearchButton/index';
-import { HeaderCatalogueButton } from '../button/HeaderCatalogueButton/index';
-import { GoToConstructorButtonHeader } from '../button/GoToConsturctorButtonHeader/GoToConstructorButtonHeader';
+import HeaderSearchButton from './__searchButton/header__searchButton';
+import HeaderCatalogueButton from './__catalogueButton/header__catalogueButton';
+import GoToConstructorButtonHeader from './__constructorButton/header__constructorButton';
 
-export const Header = () => {
+const Header = () => {
   return (
     <div>
       <div className="headerContainer">
@@ -28,3 +28,5 @@ export const Header = () => {
     </div>
   );
 };
+
+export default Header;

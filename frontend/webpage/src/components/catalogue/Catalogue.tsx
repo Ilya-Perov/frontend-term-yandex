@@ -1,9 +1,9 @@
 import './Catalogue.css';
-import { Header } from '../header';
+import Header from '../header/header';
 import Footer from '../footer/footer';
-import CatalogueBody from '../catalogueBody/catalogueBody';
+import CatalogueBody from './_body/catalogue_body';
 
-export const Catalogue = () => {
+const Catalogue = () => {
   return (
     <div className="content">
       <Header />
@@ -14,3 +14,4 @@ export const Catalogue = () => {
     </div>
   );
 };
+export default Catalogue;

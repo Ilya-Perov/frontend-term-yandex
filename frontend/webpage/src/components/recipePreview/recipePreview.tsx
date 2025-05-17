@@ -1,8 +1,8 @@
 import './recipePreview.css';
-import TagsContainer from '../tagsContainer/tagsContainer';
+import TagsContainer from './__tagsContainer/recipePreview__tagsContainer';
 import { RecipePreviewProps } from '../../types';
 
-export const RecipePreview = (props: RecipePreviewProps) => {
+const RecipePreview = (props: RecipePreviewProps) => {
   const { title, description, image, tags } = props;
   console.log('Image Path:', image);
 
@@ -31,3 +31,5 @@ export const RecipePreview = (props: RecipePreviewProps) => {
     </div>
   );
 };
+
+export default RecipePreview;

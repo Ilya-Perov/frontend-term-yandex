@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import { RecipeInput } from '../recipeInput/recipeInput';
-import { RecipePreview } from '../recipePreview/recipePreview';
-import { Header } from '../header';
-import { RecipeDisplay } from '../recipeDisplay/recipeDisplay';
-import { createRecipe } from '../api/api';
-import { SuccessModal } from '../successModal/successModal';
-import { FailureModal } from '../failureModal/failureModal';
+import { RecipeInput } from './__input/recipeConstructor__input';
+import RecipePreview from '../recipePreview/recipePreview';
+import Header from '../header/header';
+import RecipeDisplay from '../recipeDisplay/recipeDisplay';
+import { createRecipe } from '../../api/api';
+import SuccessModal from '../modal/_success/modal_success';
+import FailureModal from '../modal/_failure/modal_failure';
 import placeholder from '../../images/placeholder.png';
 import './recipeConstructor.css';
 import Footer from '../footer/footer';

@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { RecipeConstructor } from '../recipeConstructor/recipeConstructor';
-import { Catalogue } from '../catalogue/Catalogue';
-import { Home } from '../home/home';
+import Catalogue from '../catalogue/catalogue';
+import Home from '../home/home';
 import SearchPage from '../searchPage/searchPage';
 
 const App = () => {

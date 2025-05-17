@@ -11,7 +11,7 @@ interface RecipeDisplayProps {
   instructions: string;
 }
 
-export const RecipeDisplay = ({
+const RecipeDisplay = ({
   title,
   description,
   image,
@@ -63,3 +63,5 @@ export const RecipeDisplay = ({
     </div>
   );
 };
+
+export default RecipeDisplay;

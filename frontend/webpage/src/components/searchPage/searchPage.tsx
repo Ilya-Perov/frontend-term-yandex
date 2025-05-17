@@ -1,13 +1,13 @@
 import './searchPage.css';
 import { useEffect, useState } from 'react';
-import { fetchRecipes } from '../api/api';
+import { fetchRecipes } from '../../api/api';
 import { Recipe } from '../../types';
 import { extractAllTags } from '../../utils/extractAllTags';
-import TagDropdown from '../tagDropdown/tagDrodown';
-import { RecipePreview } from '../recipePreview/recipePreview';
-import { Header } from '../header';
+import TagDropdown from './__tagDropdown/searchPage_tagDropdown';
+import RecipePreview from '../recipePreview/recipePreview';
+import Header from '../header/header';
 import Footer from '../footer/footer';
-import { RecipeDisplay } from '../recipeDisplay/recipeDisplay';
+import RecipeModal from '../modal/_recipe/modal_recipe';
 
 const SearchPage = () => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
@@ -102,43 +102,33 @@ const SearchPage = () => {
           onTagSelect={handleTagSelect}
         />
 
-        <div className="recipesGrid">
-          {filteredRecipes.map((recipe) => (
-            <div
-              key={recipe.title}
-              className="catalogueItem"
-              onClick={() => handleRecipeClick(recipe)}
-            >
-              <RecipePreview
-                title={recipe.title}
-                description={recipe.description}
-                image={recipe.image_url}
-                tags={recipe.tags}
-              />
+        <div>
+          {filteredRecipes.length > 0 ? (
+            <div className="recipesGrid">
+              {filteredRecipes.map((recipe) => (
+                <div
+                  key={recipe.title}
+                  className="catalogueItem"
+                  onClick={() => handleRecipeClick(recipe)}
+                >
+                  <RecipePreview
+                    title={recipe.title}
+                    description={recipe.description}
+                    image={recipe.image_url}
+                    tags={recipe.tags}
+                  />
+                </div>
+              ))}
             </div>
-          ))}
+          ) : (
+            <div className="recipesGridNoResult">Рецепты не найдены</div>
+          )}
         </div>
       </div>
       <Footer />
 
       {selectedRecipe && (
-        <div className="modal" onClick={handleOverlayClick}>
-          <div className="modalContent">
-            <button onClick={handleCloseRecipe} className="closeButton">
-              Закрыть
-            </button>
-            <RecipeDisplay
-              title={selectedRecipe.title}
-              description={selectedRecipe.description}
-              image={selectedRecipe.image_url}
-              tags={selectedRecipe.tags}
-              ingredients={selectedRecipe.ingredients}
-              cookingTime={selectedRecipe.cooking_time}
-              servings={selectedRecipe.servings}
-              instructions={selectedRecipe.instructions}
-            />
-          </div>
-        </div>
+        <RecipeModal recipe={selectedRecipe} onClose={handleCloseRecipe} />
       )}
     </div>
   );

@@ -1,1 +1,0 @@
-export { HeaderSearchButton } from './HeaderSearchButton';
