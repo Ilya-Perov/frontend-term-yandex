@@ -1,4 +1,4 @@
-import './catalogue.css';
+import './Catalogue.css';
 import Header from '../header/header';
 import Footer from '../footer/footer';
 import CatalogueBody from './_body/catalogue_body';
