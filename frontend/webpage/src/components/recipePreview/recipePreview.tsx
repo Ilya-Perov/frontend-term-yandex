@@ -4,7 +4,6 @@ import { RecipePreviewProps } from '../../types';
 
 const RecipePreview = (props: RecipePreviewProps) => {
   const { title, description, image, tags } = props;
-  console.log('Image Path:', image);
 
   return (
     <div className="recipePreviewContainer">

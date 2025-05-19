@@ -21,8 +21,7 @@ const Home = () => {
     const loadRecipes = async () => {
       try {
         const data = await fetchRecipes();
-        const lastFive = data.slice(-5).reverse();
-        console.log(data);
+        const lastFive = data.sort((a: Recipe, b: Recipe) => a.id - b.id).slice(-5).reverse();
         setRecipes(lastFive);
       } catch (error) {
         console.error('Ошибка загрузки рецептов:', error);
